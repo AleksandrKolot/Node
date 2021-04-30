@@ -1,15 +1,17 @@
 {
-  "dependencies": {
-    "npm": "^7.11.1"
-  },
+  
   "name": "task1",
   "version": "1.0.0",
   "main": "index.js",
+   "dependencies": {
+    "npm": "^7.11.1"
+  },
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+ 
   "author": "Aleksandr Kolot",
   "license": "ISC",
   "description": "",
