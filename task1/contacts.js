@@ -1,9 +1,10 @@
 import fs from "fs";
+import { get } from "http";
 import path from "path";
 
-// const contactPath = path.join("./db", "contacts.json");
+const contactPath = path.join("./db", "contacts.json");
 // console.log(contactPath);
-const contactPath = path.resolve("db/contacts.json");
+// const contactPath = path.resolve("db/contacts.json");
 
 async function getContacts() {
   try {
@@ -26,6 +27,16 @@ export async function listContacts() {
   }
 }
 console.log(listContacts());
+
+export async function getContactById(contactId) {
+  try {
+    const contacts = await getContacts();
+    const requiredContact = contacts.filter(({ id }) => id === contactId);
+    console.log(requiredContact);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 // function listContacts() {
 //   fs.readFile(`${contactPath}`, "utf8", (err, data) => {
