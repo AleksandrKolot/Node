@@ -4,8 +4,7 @@ import path from "path";
 import { v4 as generateId } from "uuid";
 
 const contactPath = path.join("./db", "contacts.json");
-// console.log(contactPath);
-// const contactPath = path.resolve("db/contacts.json");
+
 
 async function getContacts() {
   try {
@@ -72,24 +71,3 @@ export async function addContact(name, email, phone) {
   }
 }
 
-// function listContacts() {
-//   fs.readFile(`${contactPath}`, "utf8", (err, data) => {
-//     if (err) {
-//       console.error(err);
-//       return;
-//     }
-//     console.log(data);
-//   });
-// }
-// console.log(listContacts());
-
-// function getContactById(contactId) {
-//   fs.readFile(`${contactPath}`, "utf8", (err, data) => {
-//     if (err) {
-//       console.error(err);
-//       return;
-//     }
-//     return data;
-//   }).find((contact) => contact.id === contactId);
-// }
-// console.log(getContactById(1));
