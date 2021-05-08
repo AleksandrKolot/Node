@@ -41,10 +41,10 @@ export async function getContactById(contactId) {
 export async function removeContact(contactId) {
   try {
     const contacts = await getContacts();
-    if (contact.find(({ id }) => id === contactId)) {
+    if (contacts.find(({ id }) => id === contactId)) {
       const updatedContactList = contacts.filter(({ id }) => id !== contactId);
-      await fswriteFile(contsctsPath, JSON.stringify(updatedContactList));
-      console.log(`contct with id ${contactId} was deleted`);
+      await fs.writeFile(contactsPath, JSON.stringify(updatedContactList));
+      console.log(`contact with id ${contactId} was deleted`);
       listContacts();
       return;
     }
