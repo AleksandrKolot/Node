@@ -20,9 +20,7 @@ async function getContacts() {
 export async function listContacts() {
   try {
     const contacts = await getContacts();
-    contacts.forEach((contact) => {
-      console.log(contact.name);
-    });
+    console.table(contacts);
   } catch (err) {
     console.error(err);
   }
